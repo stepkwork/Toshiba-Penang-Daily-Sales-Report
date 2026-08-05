@@ -76,7 +76,7 @@ function displayValue(value: string) {
 
 function buildReport(form: ReportForm) {
   const lines = [
-    `*${form.storeName.trim() || '(Store name)'} Daily Sales*`,
+    `*${form.storeName.trim() || '(Store name)'}*`,
     `Date: ${form.date ? formatDate(form.date) : '-'}`,
     `Target: RM ${form.target.trim() || '-'}`,
     `MTD Sales: RM ${form.mtdSales.trim() || '-'}`,
