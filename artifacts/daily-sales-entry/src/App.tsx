@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
-import { Clipboard, FileText, MessageCircle, RotateCcw, Send, X } from 'lucide-react';
+import { Clipboard, MessageCircle, RotateCcw, Send, X } from 'lucide-react';
 import modelCatalogText from '@assets/Pasted-FFC-AW-T26D2000QM-MG-FFC-AW-T26D1800MM-MG-FFC-AW-T26D14_1785926348305.txt?raw';
+import toshibaLogo from '@assets/image_1785926761492.png';
 
 type ProductCode = 'FFC' | 'REF' | 'KWH' | 'MOA' | 'SDA' | 'RAC';
 type ProductEntry = { model: string; quantity: string; price: string };
@@ -171,19 +172,12 @@ function App() {
     <div className="app-shell">
       <header className="topbar">
         <div className="brand" data-testid="brand-daily-sales">
-          <div className="brand-mark"><FileText size={19} strokeWidth={2.2} /></div>
-          <div><div className="brand-name">Daily Sales</div><div className="brand-sub">Retail reporting desk</div></div>
+          <img className="toshiba-logo" src={toshibaLogo} alt="Toshiba" />
         </div>
         <div className="day-chip"><i /> Client-side workspace</div>
       </header>
 
       <main className="main-grid">
-        <section className="intro" aria-labelledby="page-title">
-          <div className="eyebrow">End-of-day, made lighter</div>
-          <h1 className="headline" id="page-title">Close the day.<br /><em>Send the numbers.</em></h1>
-          <p className="intro-copy">A quick, dependable way to turn your store figures into a WhatsApp-ready update. Fill in what changed today and leave the formatting to us.</p>
-        </section>
-
         <div className="form-column">
           <section className="section-card form-card" aria-labelledby="details-title">
             <div className="section-heading"><h2 className="section-title" id="details-title">Report details</h2><span className="section-index">01 / 03</span></div>
