@@ -3,33 +3,33 @@
 @import 'tw-animate-css';
 
 :root {
-  --ink: #163b42;
-  --ink-soft: #42636a;
-  --paper: #f6f2e9;
-  --paper-deep: #ebe4d6;
-  --card: #fffdf8;
-  --line: #d8d4c8;
-  --accent: #ed694b;
-  --accent-deep: #c84f37;
-  --lime: #d7e77d;
-  --blue: #cfe6e6;
-  --background: 42 32% 94%;
-  --foreground: 191 48% 17%;
-  --border: 40 17% 82%;
-  --card-border: 40 17% 82%;
-  --card-foreground: 191 48% 17%;
-  --primary: 191 48% 17%;
-  --primary-foreground: 42 32% 94%;
-  --secondary: 42 28% 89%;
-  --secondary-foreground: 191 48% 17%;
-  --muted: 42 20% 90%;
-  --muted-foreground: 191 20% 38%;
-  --accent: 10 81% 61%;
-  --accent-foreground: 42 32% 94%;
-  --input: 40 17% 78%;
-  --ring: 10 81% 61%;
-  --destructive: 3 64% 46%;
-  --destructive-foreground: 42 32% 94%;
+  --ink: #3b1015;
+  --ink-soft: #75474d;
+  --paper: #fff8f7;
+  --paper-deep: #f8e8e8;
+  --card: #fffdfc;
+  --line: #e6cdd0;
+  --accent: #e30613;
+  --accent-deep: #a9000b;
+  --lime: #ffc9cf;
+  --blue: #f4dadd;
+  --background: 6 100% 98%;
+  --foreground: 348 58% 15%;
+  --border: 350 34% 85%;
+  --card-border: 350 34% 85%;
+  --card-foreground: 348 58% 15%;
+  --primary: 348 58% 15%;
+  --primary-foreground: 6 100% 98%;
+  --secondary: 350 45% 94%;
+  --secondary-foreground: 348 58% 15%;
+  --muted: 350 30% 93%;
+  --muted-foreground: 348 27% 39%;
+  --accent: 355 95% 46%;
+  --accent-foreground: 6 100% 98%;
+  --input: 350 34% 81%;
+  --ring: 355 95% 46%;
+  --destructive: 0 72% 42%;
+  --destructive-foreground: 6 100% 98%;
   --radius: 14px;
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
   --app-font-display: 'Space Grotesk', sans-serif;
@@ -141,7 +141,7 @@ button:disabled { cursor: not-allowed; }
   background: color-mix(in srgb, var(--card) 92%, transparent);
   border: 1px solid var(--line);
   border-radius: 19px;
-  box-shadow: 0 5px 0 rgba(22,59,66,.06);
+  box-shadow: 0 5px 0 rgba(59,16,21,.08);
 }
 .form-card { padding: 20px; }
 .form-card::after {
@@ -171,7 +171,7 @@ button:disabled { cursor: not-allowed; }
   letter-spacing: .02em;
   text-transform: uppercase;
 }
-.field label .optional { color: #879596; font-weight: 400; text-transform: none; }
+.field label .optional { color: #a57d82; font-weight: 400; text-transform: none; }
 .input-wrap { position: relative; }
 .input-wrap .currency {
   position: absolute;
@@ -185,7 +185,7 @@ button:disabled { cursor: not-allowed; }
 .input, .select, .textarea {
   width: 100%;
   color: var(--ink);
-  background: #fbfaf4;
+  background: #fffafa;
   border: 1px solid var(--line);
   outline: none;
   border-radius: 10px;
@@ -194,11 +194,11 @@ button:disabled { cursor: not-allowed; }
 .input, .select { height: 47px; padding: 0 13px; }
 .input-wrap .input { padding-left: 42px; }
 .textarea { min-height: 104px; padding: 13px; resize: vertical; line-height: 1.55; }
-.input::placeholder, .textarea::placeholder { color: #9aa6a1; }
+.input::placeholder, .textarea::placeholder { color: #b79ca0; }
 .input:focus, .select:focus, .textarea:focus {
   background: var(--card);
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(237,105,75,.16);
+  box-shadow: 0 0 0 3px rgba(227,6,19,.18);
 }
 .field-error { display: block; margin-top: 6px; color: var(--destructive); font-size: 11px; }
 .products-card { margin-top: 20px; padding: 20px; }
@@ -210,7 +210,7 @@ button:disabled { cursor: not-allowed; }
   gap: 11px;
   align-items: start;
   padding: 12px 0;
-  border-top: 1px solid #e5e1d7;
+  border-top: 1px solid #f0dfe1;
 }
 .product-row:first-child { border-top: 0; padding-top: 0; }
 .product-code {
@@ -246,7 +246,7 @@ button:disabled { cursor: not-allowed; }
 }
 .button:hover { transform: translateY(-2px); }
 .button:active { transform: translateY(0); }
-.button:focus-visible { outline: 3px solid rgba(237,105,75,.3); outline-offset: 2px; }
+.button:focus-visible { outline: 3px solid rgba(227,6,19,.3); outline-offset: 2px; }
 .button-primary { color: var(--paper); background: var(--accent); box-shadow: 0 4px 0 var(--accent-deep); }
 .button-primary:hover { background: var(--accent-deep); }
 .button-secondary { color: var(--ink-soft); background: transparent; border-color: var(--line); }
@@ -262,7 +262,7 @@ button:disabled { cursor: not-allowed; }
 .report-kicker { margin-bottom: 16px; color: var(--accent-deep); font: 500 10px/1 var(--app-font-mono); letter-spacing: .12em; text-transform: uppercase; }
 .report-heading { margin: 0 0 16px; font: 700 23px/1 var(--app-font-display); letter-spacing: -.05em; }
 .report-details { display: grid; gap: 0; margin: 0; }
-.report-line { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px dashed #c9c7bd; font-size: 12px; }
+.report-line { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px dashed #dfc4c7; font-size: 12px; }
 .report-line dt { color: var(--ink-soft); }
 .report-line dd { margin: 0; text-align: right; font-weight: 700; }
 .product-preview { margin: 18px 0 0; padding-top: 14px; border-top: 2px solid var(--ink); }
@@ -270,12 +270,12 @@ button:disabled { cursor: not-allowed; }
 .product-preview-line { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; font-size: 12px; }
 .product-preview-line strong { font-weight: 700; }
 .empty-products { color: var(--ink-soft); font-size: 12px; font-style: italic; }
-.feedback-preview { margin: 18px 0 0; padding: 13px 0 0; border-top: 1px dashed #c9c7bd; font-size: 12px; line-height: 1.55; }
+.feedback-preview { margin: 18px 0 0; padding: 13px 0 0; border-top: 1px dashed #dfc4c7; font-size: 12px; line-height: 1.55; }
 .feedback-preview strong { font-weight: 700; }
 .preview-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 17px; }
-.preview-footer-note { max-width: 180px; color: #a9c2c2; font-size: 10px; line-height: 1.45; }
-.copy-button { min-height: 38px; padding: 0 11px; color: var(--paper); border-color: rgba(246,242,233,.3); font-size: 10px; }
-.copy-button:hover { background: rgba(246,242,233,.1); }
+.preview-footer-note { max-width: 180px; color: #f0b9be; font-size: 10px; line-height: 1.45; }
+.copy-button { min-height: 38px; padding: 0 11px; color: var(--paper); border-color: rgba(255,248,247,.35); font-size: 10px; }
+.copy-button:hover { background: rgba(255,248,247,.12); }
 .toast-message {
   position: fixed;
   z-index: 20;
@@ -287,17 +287,17 @@ button:disabled { cursor: not-allowed; }
   background: var(--ink);
   border-left: 3px solid var(--lime);
   border-radius: 8px;
-  box-shadow: 4px 4px 0 rgba(22,59,66,.15);
+  box-shadow: 4px 4px 0 rgba(59,16,21,.18);
   font-size: 12px;
   animation: toast-in .25s ease both;
 }
-.clear-dialog-backdrop { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(22,59,66,.42); }
-.clear-dialog { position: relative; width: min(100%, 390px); padding: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: 8px 8px 0 rgba(22,59,66,.15); animation: dialog-in .2s ease both; }
+.clear-dialog-backdrop { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(59,16,21,.48); }
+.clear-dialog { position: relative; width: min(100%, 390px); padding: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: 8px 8px 0 rgba(59,16,21,.18); animation: dialog-in .2s ease both; }
 .clear-dialog h2 { margin: 0 0 8px; font: 700 22px/1 var(--app-font-display); letter-spacing: -.05em; }
 .clear-dialog p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 22px; }
 .dialog-actions .button { min-height: 42px; }
-.footer-note { max-width: 1280px; margin: 0 auto; padding: 0 18px 28px; color: #758889; font: 500 10px/1.5 var(--app-font-mono); letter-spacing: .03em; }
+.footer-note { max-width: 1280px; margin: 0 auto; padding: 0 18px 28px; color: #9a7075; font: 500 10px/1.5 var(--app-font-mono); letter-spacing: .03em; }
 @keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes dialog-in { from { opacity: 0; transform: scale(.97) translateY(5px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 @media (min-width: 680px) {
