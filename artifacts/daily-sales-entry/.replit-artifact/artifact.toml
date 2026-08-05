@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Daily Sales Entry"
+description = "A mobile-first daily sales reporting app for recording store figures and product sales, then generating a formatted WhatsApp report."
+version = "1.0.0"
+id = "artifacts/daily-sales-entry"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20978
+
+[services.development]
+run = "pnpm --filter @workspace/daily-sales-entry run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/daily-sales-entry", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/daily-sales-entry/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20978"
+BASE_PATH = "/"
