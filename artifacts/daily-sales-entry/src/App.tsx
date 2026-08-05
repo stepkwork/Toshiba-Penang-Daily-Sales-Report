@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Clipboard, FileText, MessageCircle, RotateCcw, Send, X } from 'lucide-react';
+import modelCatalogText from '@assets/Pasted-FFC-AW-T26D2000QM-MG-FFC-AW-T26D1800MM-MG-FFC-AW-T26D14_1785926348305.txt?raw';
 
 type ProductCode = 'FFC' | 'REF' | 'KWH' | 'MOA' | 'SDA' | 'RAC';
 type ProductEntry = { model: string; quantity: string; price: string };
@@ -13,8 +14,6 @@ type ReportForm = {
   products: Record<ProductCode, ProductEntry>;
 };
 
-// EDIT THIS SINGLE CONSTANT to maintain the model options for every category.
-export const MODEL_OPTIONS = ['-- Select model --', 'Model A', 'Model B'];
 const PRODUCT_CODES: ProductCode[] = ['FFC', 'REF', 'KWH', 'MOA', 'SDA', 'RAC'];
 const PRODUCT_NAMES: Record<ProductCode, string> = {
   FFC: 'Fan / Fan Coil',
@@ -24,6 +23,23 @@ const PRODUCT_NAMES: Record<ProductCode, string> = {
   SDA: 'Small Domestic Appliance',
   RAC: 'Room Air Conditioner',
 };
+
+const modelsByCategory = PRODUCT_CODES.reduce((catalog, code) => {
+  catalog[code] = [];
+  return catalog;
+}, {} as Record<ProductCode, string[]>);
+
+modelCatalogText.split(/\r?\n/).forEach((line) => {
+  const [category, model] = line.split('\t', 2);
+  if (category && model?.trim() && PRODUCT_CODES.includes(category as ProductCode)) {
+    modelsByCategory[category as ProductCode].push(model.trim());
+  }
+});
+
+const MODEL_OPTIONS_BY_CATEGORY = PRODUCT_CODES.reduce((options, code) => {
+  options[code] = ['-- Select model --', ...modelsByCategory[code]];
+  return options;
+}, {} as Record<ProductCode, string[]>);
 
 function localToday() {
   const now = new Date();
@@ -86,7 +102,7 @@ function ProductRow({ code, entry, onChange }: { code: ProductCode; entry: Produ
         <div className="field">
           <label htmlFor={`model-${code}`}>Model</label>
           <select id={`model-${code}`} className="select" value={entry.model} onChange={(event) => onChange('model', event.target.value)} data-testid={`select-model-${code.toLowerCase()}`}>
-            {MODEL_OPTIONS.map((model) => <option key={model} value={model === '-- Select model --' ? '' : model}>{model}</option>)}
+            {MODEL_OPTIONS_BY_CATEGORY[code].map((model) => <option key={model} value={model === '-- Select model --' ? '' : model}>{model}</option>)}
           </select>
         </div>
         <div className="field">
