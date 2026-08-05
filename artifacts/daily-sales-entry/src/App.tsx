@@ -174,7 +174,7 @@ function App() {
             <div className="field-grid">
               <div className="field">
                 <label htmlFor="store-name">Store name</label>
-                <input id="store-name" className="input" type="text" placeholder="e.g. Mid Valley" value={form.storeName} onChange={(event) => updateField('storeName', event.target.value)} data-testid="input-store-name" aria-invalid={Boolean(storeError)} />
+                <input id="store-name" className="input" type="text" placeholder="e.g. Wah Lee Tanjung Tokong" value={form.storeName} onChange={(event) => updateField('storeName', event.target.value)} data-testid="input-store-name" aria-invalid={Boolean(storeError)} />
                 {storeError && <span className="field-error" role="alert" data-testid="error-store-name">{storeError}</span>}
               </div>
               <div className="field">
