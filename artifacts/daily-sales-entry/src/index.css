@@ -198,13 +198,6 @@ button:disabled { cursor: not-allowed; }
   border-radius: 8px 8px 8px 2px;
   font: 700 11px/1 var(--app-font-mono);
 }
-.category-name {
-  overflow: hidden;
-  color: var(--ink-soft);
-  font-size: 11px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .add-product, .remove-product {
   display: inline-flex;
   align-items: center;
@@ -282,6 +275,8 @@ button:disabled { cursor: not-allowed; }
 .button:focus-visible { outline: 3px solid rgba(227,6,19,.3); outline-offset: 2px; }
 .button-primary { color: var(--paper); background: var(--accent); box-shadow: 0 4px 0 var(--accent-deep); }
 .button-primary:hover { background: var(--accent-deep); }
+.button-whatsapp { color: #fffafa; background: #2b1114; box-shadow: 0 4px 0 #14080a; }
+.button-whatsapp:hover { color: #fffafa; background: #14080a; }
 .button-secondary { color: var(--ink-soft); background: transparent; border-color: var(--line); }
 .button-secondary:hover { color: var(--ink); background: var(--secondary); }
 .button-quiet { min-height: 42px; color: var(--ink-soft); background: transparent; border-color: transparent; }

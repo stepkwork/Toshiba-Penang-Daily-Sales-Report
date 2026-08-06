@@ -18,14 +18,6 @@ type ReportForm = {
 };
 
 const PRODUCT_CODES: ProductCode[] = ['FFC', 'REF', 'KWH', 'MOA', 'SDA', 'RAC'];
-const PRODUCT_NAMES: Record<ProductCode, string> = {
-  FFC: 'Fan / Fan Coil',
-  REF: 'Refrigerator',
-  KWH: 'Kitchen & Home',
-  MOA: 'Microwave Oven',
-  SDA: 'Small Domestic Appliance',
-  RAC: 'Room Air Conditioner',
-};
 
 const modelsByCategory = PRODUCT_CODES.reduce((catalog, code) => {
   catalog[code] = [];
@@ -337,11 +329,10 @@ function App() {
             <p className="products-intro">Only completed rows appear in your summary. Leave a category blank if there was no movement.</p>
             <div className="product-list">
               {PRODUCT_CODES.map((code) => (
-                <section className="category-group" key={code} aria-labelledby={`category-title-${code.toLowerCase()}`}>
+                <section className="category-group" key={code} aria-label={`${code} products`}>
                   <div className="category-heading">
                     <div>
                       <span className="category-code">{code}</span>
-                      <span className="category-name" id={`category-title-${code.toLowerCase()}`}>{PRODUCT_NAMES[code]}</span>
                     </div>
                     <button className="add-product" type="button" onClick={() => addProduct(code)} data-testid={`button-add-${code.toLowerCase()}`}><Plus size={14} /> Add model</button>
                   </div>
@@ -367,7 +358,7 @@ function App() {
             <div className="field"><label htmlFor="feedback">Anything the group should know <span className="optional">optional</span></label><textarea id="feedback" className="textarea" placeholder="Stock notes, customer requests, wins from the floor..." value={form.feedback} onChange={(event) => updateField('feedback', event.target.value)} data-testid="textarea-feedback" /></div>
             <div className="form-actions">
               <button className="button button-quiet" type="button" onClick={() => setShowClearDialog(true)} data-testid="button-clear-all"><RotateCcw size={15} /> Clear all</button>
-              <button className="button button-primary" type="button" onClick={submitToWhatsApp} data-testid="button-send-whatsapp"><MessageCircle size={17} /> Generate WhatsApp report <Send size={14} /></button>
+              <button className="button button-primary button-whatsapp" type="button" onClick={submitToWhatsApp} data-testid="button-send-whatsapp"><MessageCircle size={17} /> Generate WhatsApp report <Send size={14} /></button>
             </div>
           </section>
         </div>
