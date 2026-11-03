@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Clipboard, MessageCircle, Plus, RotateCcw, Send, Trash2, X } from 'lucide-react';
-import modelsText from "@assets/models.txt?raw";
+import modelCatalogText from '@assets/Pasted-FFC-AW-T26D2000QM-MG-FFC-AW-T26D1800MM-MG-FFC-AW-T26D14_1785926348305.txt?raw';
 import toshibaLogo from '@assets/image_1785926761492.png';
 
 type ProductCode = 'FFC' | 'REF' | 'KWH' | 'MOA' | 'SDA' | 'RAC';
